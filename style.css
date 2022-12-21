@@ -1,0 +1,103 @@
+:root {
+    --text-color: #f0f4f5;
+    --background-color: #263343;
+    --accent-color: #d49466;
+}
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro';
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color); /* 디자인 -> 너무 극단적인 하얀색과 검정색은 쓰지 않는 것이 좋기 때문에 톤다운 된 하얀색을 쓰는 것이 좋다. */
+}
+
+.navbar { /* 현재 아이템들 모두 블록 레벨임 -> 그래서 한 줄에 하나씩 나와있음 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #263343;
+    padding: 8px 12px; /* 위: 8px, 양옆: 12px */
+}
+
+.navbar__logo {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.navbar__logo i {
+    color: #d49466;
+}
+
+.navbar__menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar__menu li {
+    padding: 8px 12px; /* 위 8px, 양옆 12px */
+}
+
+.navbar__menu li:hover { /* hover : 마우스에 올렸을 때 */
+    background-color: #d49466;
+    border-radius: 4px; /* border-radius: 4px -> 모서리를 둥글게 지정 */
+}
+
+.navbar__icons {
+    list-style: none;
+    display:flex;
+    color: var(--text-color);
+    padding-left: 0;
+}
+
+.navbar__icons li {
+    padding: 8px 12px;
+}
+
+.navbar__toogleBtn{
+    display: none; /* 화면이 작을 때만 토글 버튼이 나오도록 설정 */
+    position: absolute; /* 현재 흐름에서 나와서 제일 위로 올라감, flex에서 나와서 제일 위로 올라감 */
+    right: 32px; /* 오른쪽으로 32px 떨어진 곳에 붙여줘 */
+    font-size: 24px;
+    color: #d49466;
+}
+
+/* 레이아웃을 반응형으로 만들 때 : media 쿼리를 사용 */
+/* 화면을 작게 하면 요소들이 밑으로 내려오도록 개발 -> 이렇게 개발하기 위해 반응형으로 만듦 */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .navbar__menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar__menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar__icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar__toogleBtn {
+        display:block;/* 화면이 작을 때만 토글 버튼이 나오도록 설정 */
+    }
+
+    .navbar__menu.active,
+    .navbar__icons.active {
+        display: flex;
+    }
+}

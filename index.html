@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,700;1,300;1,900&display=swap" rel="stylesheet">
+    <title>Nav bar</title>
+    <script src="https://kit.fontawesome.com/6c4721e68a.js" crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
+</head> <!-- 현업에서는 디자이너들이 제공해주는 svg로 아이콘들을 많이 이용함  -->
+<!-- 개인적으로 프로젝트를 할 때는 font awesome 닷컴에 오면 무료로 이쁜 아이콘들을 사용할 수 있음 -->
+<body>
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <i class="fab fa-accusoft"></i>
+            <a href="">Dreamcoding</a>
+        </div>
+
+        <ul class="navbar__menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">Gallery</a></li>
+            <li><a href="">Weddings</a></li>
+            <li><a href="">FAQ</a></li>
+            <li><a href="">Bookings</a></li>
+        </ul>
+
+        <ul class="navbar__icons">
+            <li><i class="fa-brands fa-twitter"></i></li>
+            <li><i class="fa-brands fa-facebook-f"></i></li>
+        </ul>
+
+        <a href="#" class="navbar__toogleBtn"><!-- 눌렀을 때 현재 페이지가 열리는 것을 방지하기 위해 herf = '#' -> 이것을, #을 넣어줌 -->
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    </nav>
+</body>
+</html>
